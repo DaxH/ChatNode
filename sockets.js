@@ -33,7 +33,7 @@ module.exports = function (server) {
 
       if (!socket.usuario) return;
 
-      usuario_list.splice(usuario_list.indexOf(socket.usuario))
+      usuario_list.splice(usuario_list.indexOf(socket.usuario),1)
       sockets.emit('usuarios-conectados', usuario_list)
 
     });
