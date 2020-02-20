@@ -11,6 +11,11 @@
     #contenedor-chat{
       display: none;
     }
+    .scroll{
+      height: 300px;
+      overflow-y: scroll;
+
+    }
   </style>
 
   <body>
@@ -33,24 +38,26 @@
 
     <div class="container" id='contenedor-chat'>
       <div class="row">
-        <div class="col-md-6 mt-2">
+        <div class="col-md-7 mt-2">
           <div class="card">
             <div class="card-header">
               <h1>Chat</h1>
             </div>
-            <div id="chat" class="card-body"></div>
-              <form class="card-footer" id="caja-mensaje">
-                <div class="input-group">
-                  <input type="text" id="mensaje-chat" class="form-control">
-                  <button type="submit" class="btn btn-info ml-2">Enviar</button>
+            <div class="scroll">
+              <div id="chat" class="card-body"></div>
+            </div>
+            <form class="card-footer" id="caja-mensaje">
+              <div class="input-group">
+                <input type="text" id="mensaje-chat" class="form-control">
+                <button type="submit" class="btn btn-info ml-2">Enviar</button>
               </div>
             </form>
           </div>
         </div>
-        <div class="col-md-4 my-2">
+        <div class="col-md-5 my-2">
           <div class="card">
             <div class="card-header">
-              <h1>Usuarios</h1>
+              <h1>Usuarios Conectados</h1>
             </div>
             <div class="card-body">
               <div id='usuario-activo'>
