@@ -4,12 +4,13 @@ const app = express();
 const morgan = require('morgan');
 const server = http.createServer(app);
 
-app.set('port', 1111);
+
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-server.listen(app.get('port'),function(){
-  console.log('Sevidor Chat Iniciado');
+var port = process.env.PORT || 3000
+server.listen(port,function(){
+  console.log('Sevidor Chat Iniciado' ,port);
 });
 
 require('./sockets')(server);
