@@ -8,7 +8,7 @@ const server = http.createServer(app);
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 1111;
 server.listen(port,function(){
   console.log('Sevidor Chat Iniciado' ,port);
 });

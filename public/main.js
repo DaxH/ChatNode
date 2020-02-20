@@ -41,6 +41,6 @@ $(function () {
   });
 
   socket.on('mensaje-del-servidor', function (data) {
-    chat.append('<b>' + data.usuario + '</b>: ' + data.mensaje + '<br/>')
+    chat.append(data.hora+' '+'<b>'+ data.usuario + '</b>: ' + data.mensaje + '<br/>')
   });
 });
