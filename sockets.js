@@ -3,11 +3,6 @@ module.exports = function (server) {
 
   let sockets = io.listen(server);
   let usuario_list = [];
-  let fecha = new Date();
-  let hora = fecha.getHours();
-  let minuto = fecha.getMinutes();
-  let segundo = fecha.getSeconds();
-  let hora_mensaje = hora +':'+minuto+':'+segundo;
 
   sockets.on('connection',function(socket) {
     console.log('nuevo cliente conectado');
@@ -27,7 +22,12 @@ module.exports = function (server) {
     });
 
     socket.on('mensaje-del-cliente', function (data) {
+      let fecha = new Date();
+      let hora = fecha.getHours();
+      let minuto = fecha.getMinutes();
+      let hora_mensaje = hora +':'+minuto;
         sockets.emit('mensaje-del-servidor',{
+
           hora:hora_mensaje,
           mensaje:data,
           usuario: socket.usuario
